@@ -1,0 +1,5 @@
+nap20231128_SZB_V:
+
+- osztályzatok (számok) bekérése for ciklus használatával, majd tömbök feltöltése
+- osztályzatok (számok) kiíratása 
+- átlag kiszámítása

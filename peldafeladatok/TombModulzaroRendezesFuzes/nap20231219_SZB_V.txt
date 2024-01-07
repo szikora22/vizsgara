@@ -1,0 +1,19 @@
+nap20231219_SZB_V:
+
+- absztraktOsztaly:
+
+	- gépalkatrészes feladat, fájlkezeléssel, absztraktosztály megfelelő használata
+
+- kivetelkezelés:
+
+	- Kivételkezeléshez útmutató
+
+- nevek: 
+
+	- modulzárós feladat -> menópont, sorbarendezés, tömbök összefűzése, átlaghossz meghatározása, fájlbaírás
+
+- oroklodes, oroklodesBovitve ->
+
+	- útmutató az öröklődés használatához
+
+- osztalyzatok feladat megvalósítása kivételdobása
