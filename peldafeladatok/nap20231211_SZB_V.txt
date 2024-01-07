@@ -1,0 +1,5 @@
+- elsoOOP
+	- Alap OOP feladat
+
+- fajlKezeles
+	- Fájlkezelés teljes folyamata menürendszerrel együtt megvalósítva (txt fájlból beolvasva/kiírva)

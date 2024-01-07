@@ -1,0 +1,34 @@
+nap20231203_SZB_V:
+
+- azonositoGeneralas
+
+	- felhasználói azonosító generálása vezetéknévből és keresztnévből Math függvények használatával
+	- resz String kiíratás, bizonyos betű számának megszámlálása majd kiíratás
+
+- datumok:
+
+	- Különféle dátumfüggvények megfelelő használata
+
+- hazifeladatok:
+
+	- MatrixFeltoltes -> kétdimenziós tömb feltöltése Random számokkal, majd azok kiíratása, illetve transzponálása másik kétdimenziós tömbbe
+
+	- MatrixRandomNegyzet -> kétdimenziós tömb feltöltése Random számokkal, majd azok kiíratása rendesen, illetve fordítva
+
+	- NevBeker -> keresztnevek bekérése, majd minden második kilistázása, legtöbb 'S' - betűt tartalmazó név, leghosszabbnév
+
+- karakterSzovegek
+
+	- Példák matek és karakterfüggvények használatára
+
+- tovabbiDatumTipusok:
+
+	- További példák dátumfüggvényekre
+
+
+- veletlenSzam:
+
+	- Random elemszámú tömb feltöltése random számokkal, majd azok kilistázása, párosdarabok, legnagyobb elem, elsőnégyzetszám
+
+
+

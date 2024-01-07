@@ -1,0 +1,1 @@
+- GUI feladatok - List, db készítés, enumeráció, gombok

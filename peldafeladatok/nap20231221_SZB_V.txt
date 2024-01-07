@@ -1,0 +1,31 @@
+nap20231221_SZB_V:
+
+- cipoBoltArrayList:
+
+	- Fájbelolvasás konstruktoros metódussal
+	- getter/setter if szerkezetbe ültetve
+	- toString megfelelő használata
+	- Feladatok osztály külön 
+	- kilistázás típusonként, árintervallum, Lista szerkezet feladathoz biztosan lesz megfelelő megoldás (if és foreach megfelelő használata)
+	- két termék gyártása vagy bármilyen elemek között eltelt idő meghatározása (dátumintervallum megfelelő használata)
+
+- felhasznalaoArrayList:
+
+	- Fájlkezelés, felhasználók beolvasása List szerkezet használatával
+
+- infoSzotar:
+
+	- Szótárszerkezet megvalósítása List és Hashmap szerkezet segítségével
+
+- mapInterface
+
+	- Map szerkezet megfelelő használata
+
+- sajatInterface
+
+	- Kapcsolatok szolgálatok feladat, ami jól demonstrálja az interface szerkezet megfelelő használatát
+
+
+
+
+

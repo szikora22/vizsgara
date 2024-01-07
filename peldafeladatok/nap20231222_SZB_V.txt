@@ -1,0 +1,7 @@
+- okjRajtszamok:
+
+ 	- List feladathoz jó lehet (HashMap)
+
+- ujsagNyilvantartas 
+
+	-fájlbeolvasás, öröklődés, absztrakció megfelelő használata, objektumok

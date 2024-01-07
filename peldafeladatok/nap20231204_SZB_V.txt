@@ -1,0 +1,12 @@
+nap20231204_SZB_V:
+
+
+- tombRendezesek:
+
+	- Tombfeltoltes ->  tömb feltöltése, kilistázása, számok sorba rendezése, bizonyos szám keresése bináris kereséssel
+	- StringRendezesek ->  String elemeinek sorbarendezése
+
+- vallalkozasApp
+
+	- Vállakozások számának, havieredményének, random eredményének bekérése és kilistázása, hasznos, ha kilistázni akarunk valamit
+	- nyereségkiszámolás

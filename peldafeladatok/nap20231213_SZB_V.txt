@@ -1,0 +1,7 @@
+nap20231213_SZB_V:
+
+- masodikOOP:
+	
+	- Terület/kerület számítás OOP alapokon
+
+- OsztalyzatokOOP feladatok adatbekéréssel, ellenőrzéssel, fájlból olvasással és fájlbaírással

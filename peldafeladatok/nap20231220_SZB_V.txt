@@ -1,0 +1,3 @@
+nap20231220_SZB_V:
+
+- oopAlapokOsszefoglaloProjekt -> állatmenhelyes feladat OOP környezetben

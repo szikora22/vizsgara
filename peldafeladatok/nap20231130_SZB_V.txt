@@ -1,0 +1,17 @@
+nap20231130_SZB_V:
+
+- matrixok package:
+
+	- kétdimenziós mátrix feltöltése számokkal
+	- kilistázás elsőtől utolsóig, illetve utolsótól elsőig - > ez jó egydimenziós tömbökhöz is
+
+- tolbfeltoltesHazifeladat package:
+
+	 - tömb feltöltése konzolról bekért számokkal
+	 - felhasználó által bekért számok kilistázása
+	 - az első négyzetszám kilistázása
+	 - az első elem négyzete
+	 - páratlan számok kilistázása és azok indexei 
+	 - hárommal osztható számok listája és azok kiíratása, de visszafelé haladva
+	 - az utolsó 5 elem összege kilistázva
+	 - kétdimenziós tömb feltöltése és kilistázása az egydimenziós tömbbel valahogyan remélem ilyen nem lesz :D 
