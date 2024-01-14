@@ -1,0 +1,203 @@
+- Teszteset véletlenszámgenerálás tesztelésére:
+
+	- ha azt szeretnénk vizsgálni, hogy a véletlenszám a két érték között van:
+
+		//@Test
+		@RepeatedTest(100)
+		void veletlenSzamGeneratorTeszt() {
+
+		// Mindig úgy hozunk létre vizsgálandó változót, amit visszaad a metódus!
+		
+		int veletlenSzam = EmailGeneraloApp.veletlenSzamGenerator(10, 20);	// értéket adunk neki a metódussal
+		
+		assertTrue(veletlenSzam >= 10 && veletlenSzam <= 20);			// igaz értéket kell visszaadnia
+		
+		
+		}
+
+- Teszteset szöveggenerálásra (pl. emailcímgenerálás, azonosító, generálás, jelszógenerálás):
+
+	- ez a teszteset megvizsgálja, hogy a megfelelő szöveget adja-e vissza a metódus:
+
+	@Test
+	void emailCimKiosztasTeszt() {
+		
+		String vezetekNev = "Kiss";
+		String keresztNev = "Benedek";
+		assertTrue(EmailGeneraloApp.emailCimKiosztas(vezetekNev, keresztNev).startsWith("kiss.bened"),
+				"Nem megfelelő email cím generálódott ->"+EmailGeneraloApp.emailCimKiosztas(vezetekNev, keresztNev));
+		
+	}
+
+- Teszteset, ahol adott egy olyan osztály, amiben található olyan metódus is, ami bizonyos számítási műveletet végez (százalék, átlag, sebesség, távolság):
+
+	- ilyen esetekben, mindig definiálni kell egy objektumot a tesztkörnyezetben, majd meghatározni egy elvártértéket, ami az az eredmény, aminek születnie
+	  kell a metódus végrehajtás során, majd visszaellenőrizni, hogy a megfelelő értéket kaptuk-e (érdemes főprogramban elvégezni mi a számítás pontos
+	  eredménye és azt beírni elvárt értéknek a tesztkörnyezetben: (százalék)
+
+		@Test
+	void ertekkovetesTeszt() {
+		
+		Festmeny tesztObj = new Festmeny("Teszt", "Teszt", 2022, 16000000);
+		int tesztSzazalek = 5;
+		long elvartErtek = 16800000;
+		assertEquals(elvartErtek,tesztObj.ertekkovetes(tesztSzazalek));
+		
+	}
+
+- Teszteset olyan getterre vagy setterre, ahol IllegalArgumentException hibadobás van megadva (ha nem jut eszembe semmilyen teszteset, akkor rögtönözni tökéletes):
+
+
+	- Setter esetén itt azt vizsgáljuk, hogy ha az érték tartományon kívül esik, akkor kapunk-e hibaüzenetet:
+
+		@Test
+	void setBecsultErtekTeszt() {
+		
+		Festmeny tesztObj = new Festmeny("Teszt", "Teszt", 2022, 16000000);
+		
+		int ujErtek = 180000;
+		
+		
+		assertThrows(IllegalArgumentException.class, () -> tesztObj.setBecsultErtek(ujErtek));
+		
+		
+	}
+
+
+	- Getter esetén itt azt vizsgáljuk hogy a String érték üres, akkor dob-e a megkötés alapján hibaüzenetet:
+
+	@Test
+	void getCimTeszt() {
+		
+		Festmeny tesztObj = new Festmeny(null, "Teszt", 2022, 16000000);
+		
+		
+		assertThrows(IllegalArgumentException.class, () -> tesztObj.getCim());
+		
+	}
+
+- Teszteset listaelemre, ahol azt vizsgálja, hogy a 0. indexen levő versenyző, lett-e ténylegesen az utolsó helyezette sorbarendezős metódus vizsgálata
+
+	- legkisebb vagy legnagyobb elem keresésére is alkalmazható teszteset, ahol az indexen levő elem értrékét vizsgáljuk:
+
+		
+	@Test
+	void utolsohelyezettTeszt() {
+		
+		List<Versenyzo> versenyzok = new ArrayList<Versenyzo>() {
+			
+			{
+				add(new Versenyzo("0123", "Teszt Elek", "Maraton SC", 10));
+				add(new Versenyzo("0234", "kettes versenyző", "Futó SE", 2));
+				add(new Versenyzo("0345", "hármas versenyző", "SC", 4));
+			}
+			
+		};
+		
+		assertEquals(0, FoprogramKollekciok.utolsohelyezett(versenyzok));
+		
+		
+	}
+
+
+- Teszteset boolean értéket visszadó metódusra - ez is egy getternek a vizsgálata:
+
+	- itt jelenesetben azt vizsgáljuk, hogy igaz értéket a vissza  metódus arra, hogy az adott versenyző érmet szerzett-e:
+
+	@Test 
+	void getHelyezesTeszt(){
+		
+		Versenyzo tesztObj = new Versenyzo("0123", "Teszt Elek", "Maraton SC", 1);
+		
+		assertEquals(1, tesztObj.getHelyezes());
+		
+		
+	}
+
+
+- Teszteset fájlbeolvasás vagy fájlbaírás metódutra:
+
+	- itt többféle teszteset is felvan tűntvetve, mind a három közül lehet választani tetszőlegesen:
+
+	@Test
+	void fajlBeolvasasTeszt() throws IOException {
+
+
+		FajlMuveletek fajlObj = new FajlMuveletek();
+		
+		
+		assertTrue(fajlObj.fajlBeolvasas("meroszamok.csv", ";").size()>0);
+		assertEquals(25, fajlObj.fajlBeolvasas("meroszamok.csv", ";").size());
+		assertThrows(FileNotFoundException.class, () -> fajlObj.fajlBeolvasas("nincsilyenfajl.csv",";"));
+		
+	}
+
+
+- Teszteset, ha például egy számolós metódust kell tesztelni, ahol a várható érték double érték, viszont a kerekítéssel problémákat adódhatnak:
+
+	- itt érdemes felfelele kerekíteni a számot a következő módszerrel:
+
+	@Test
+	void valtozasMertekeTeszt() {
+		
+		Programnyelv nyelvObj = new Programnyelv("Ada", 1983, 12000, 14, 10000);
+		double elvartEredmeny = 20.0;
+		assertEquals(elvartEredmeny,nyelvObj.valtozasMerteke(),0.01);
+		
+	}
+
+
+
+- Teszteset GUI környezetbe:
+	
+	- ez egy teszteset a frame nevének lekérdezésére:
+
+	@Test
+	void initializeTeszt() {
+		
+		FilmkatalogusFrame TesztWindow = new FilmkatalogusFrame();
+		assertEquals("Filmkatalógus", TesztWindow.getFrmFilmkatalgus().getTitle());
+		
+	}
+
+
+- Teszteset adatbázisokra
+
+	@Test
+	void ujFilmTeszt() {
+		
+		Film ujFilmObj = new Film("F00009","Shrek",2000,250000000,true);
+		
+		try {
+			
+			ABKezelo.csatlakozas();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		assertDoesNotThrow(() -> ABKezelo.ujFilm(ujFilmObj));
+		
+	}
+	
+	@Test
+	void filmekBeolvasaTeszt() {
+		
+		try {
+			
+			ABKezelo.csatlakozas();
+			assertTrue(ABKezelo.filmekBeolvasasa().size()>0);
+			
+		}catch (Exception e) {
+			
+		}
+		
+		
+	}
+	
+
+
+
+		
+
+	

@@ -1,6 +1,7 @@
 package feladat02_Teszt;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,16 @@ class FestmenyTest {
 		
 		assertThrows(IllegalArgumentException.class, () -> tesztObj.setBecsultErtek(ujErtek));
 		
+		
+	}
+	
+	@Test
+	void getCimTeszt() {
+		
+		Festmeny tesztObj = new Festmeny(null, "Teszt", 2022, 16000000);
+		
+		
+		assertThrows(IllegalArgumentException.class, () -> tesztObj.getCim());
 		
 	}
 	

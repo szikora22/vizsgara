@@ -5,51 +5,45 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+
 public class FoprogramAutoSzerviz {
+	
+	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Adja meg az aktuális óradíjat");
-		
-		int oradij = Integer.parseInt(sc.nextLine());
-		
+		int ar = Integer.parseInt(sc.nextLine());
+				
 		Adatkezeles adatObj = new Adatkezeles();
 		List<SzervizMunka> szervizmunkak = adatObj.szervizBekeres();	
 		System.out.println("A legrövidebb ideig tartó szervíztevékenység: ");
 		System.out.println(szervizmunkak.get(legrovidebbSzerviz(szervizmunkak)).toString());
 		
-		// Map létrehozása
-		Map<String, SzervizMunka> szervizek = new HashMap<>();
 		
-		//Adatszerkezet feltöltése
+		Map<String, Integer> munkadijak = new HashMap<String, Integer>();
 		
-		szervizek.put("Általános Szerviz", new SzervizMunka("Altalános szervíz", 10));
-		szervizek.put("Olajcsere", new SzervizMunka("Olajcsere", 3));
-		szervizek.put("Fékcsere", new SzervizMunka("Fékcsere", 5));
 		
-		//Adatok kilistázása
-		
-		/*for(Map.Entry<String, SzervizMunka> entry : szervizek.entrySet()) {
+		for (SzervizMunka szervizMunka : szervizmunkak) {
 			
-			String nev = entry.getKey();
+			int oraDij = szervizMunka.arKepzes(ar);
+			munkadijak.put(szervizMunka.getSzervizTevekenyseg(), oraDij);			
+		}
+		
+		System.out.println("Szervíztevékenységek és munkadíjak: ");
+		
+		for (Map.Entry<String, Integer> entry : munkadijak.entrySet()) {
 			
-			SzervizMunka szerviz = entry.getValue();
+			System.out.println(entry.getKey() + ": " + entry.getValue());
 			
-			integer munkadij = szerviz.arKepzes();
-			
-			System.out.println("Szerviz neve: " + nev + " , Munkadíj: " + munkadij);
-			
-		} */
+		}
 		
 		
-		
-		
-		
-		
-			
+				
 	}
 	
+
 	public static int legrovidebbSzerviz(List<SzervizMunka> szervizmunkak) {
 		
 		int minIndex = 0;

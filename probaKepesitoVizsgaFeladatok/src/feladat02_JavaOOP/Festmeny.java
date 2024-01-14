@@ -19,6 +19,22 @@ public class Festmeny {
 	}
 	
 	
+	
+	
+
+
+	public String getCim() {
+		if (cim != null && !cim.isBlank()) {
+			return cim;
+		}
+		else {
+			throw new IllegalArgumentException("A cím nem lehet üres!");
+		}
+	}
+
+
+
+
 
 
 	public void setBecsultErtek(long becsultErtek) {
