@@ -1,0 +1,40 @@
+Windows/show view - package explorer
+Window/Perspective/open perspective/Java
+
+
+Mindenek előtt jelentkezz be az asztali github fiókra!! File/Options - kijelentkezés és bejelentkezés
+
+Kollaborátor meghívás:
+
+- Cica ikonra megyünk
+- Kiválasztjuk a repot
+- Settings fülre kattint
+- General/ Access menü alatt kiválasztjuk a collaborátort
+- Add people fülre kattintva beírjuk a meghívandö felet
+
+Ha hozzáadtak már minket kollaborátorként, akkor ezt kell tenni:
+
+- Jobb felső sarok notifications fül
+- Az üzenetek között lesz egy értesítés
+- Rákattint, majd accept invitation
+- Zöld feliratú <> Code gombra kattintás
+- Elérési link másolása (ez nem a legjobb választás)
+- Inkább válaszd az open GitHub with Desktop gombot
+- Saját ág elkészítése - Current branch - masterre kattintás, majd new branch - elnevezés: szikoraBenceKepesitoVizsga mondjuk majd create branch
+- ha még csak dolgozunk benne és frissíteni akarjuk, akkor commit, ha végeztünk, akkor publish branch
+
+Program betöltése eclipse-be:
+
+- Megnyitjuk az eclipset
+- File/Open project from file system, Directory, megkeressük hol van és a komplett mappaszerkezetet (pl. probaKepesito) kiválasszuk majd finishel beimportáljuk
+
+
+Ha nekünk kell verziókezeltté tenni, akkor a következő a teendő:
+
+- Létrehozzuk a repositoryt githubon, majd Zöld gomb <>Code és klónozzuk a github desktoppal vagy setup in desktop gombra kattintva csinálunk klónrepót
+- Jobb egérgomb a projekten, Team, majd Share project és hozzáadjuk a repo mappához a projektet
+- Ha ez megtörtént, akkor újra jobb egérgomb a projekten, majd Team és Commit parancsra kattintás
+- Dupla katt a Commit Messagebe
+- Minden fájl hozzáadás a zöld plusz-plusz gombbal
+- Commit messagebe írj valamit, majd commit gomb lenyomás
+- Utána github desktopon vagy Eclipsen belül lehet Pusolni
